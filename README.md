@@ -1,39 +1,53 @@
 # Wei-Hsien (Rachel) Wang · Portfolio
 
+| Project | Problem | Stack | Demo / source |
+| --- | --- | --- | --- |
+| Eric’s Auto Care | Customers need service answers and booking help while shop staff are busy with repairs. | React, Python, Groq / LLaMA, Supabase | [Demo](https://small-business-agent.vercel.app) · [Source](https://github.com/rsm-wew068/small_business_agent) |
+| Experimentation & Customer Analytics | Product teams need to separate incremental impact from predicted behavior when evaluating interventions and churn risk. | Python, Scikit-learn, XGBoost, Jupyter | [Case studies](https://github.com/rsm-wew068/mgta495-customer-analytics) |
+| Live Suggestion Agent | People need relevant assistance during conversations without losing the thread. | Next.js, Groq Whisper, GPT-OSS, Vercel | [Demo](https://twinmind-live-suggestion-liart.vercel.app) · [Source](https://github.com/rsm-wew068/live-suggestion-agent) |
+| Email Intelligence | Obligations and dependencies are difficult to track across long email threads. | Python, LangGraph, Neo4j, FAISS, Streamlit | [Demo](https://huggingface.co/spaces/rsm-wew068/automated-task-manager) · [Source](https://github.com/rsm-wew068/graph-ai-task-manager) |
+
 **People first. Then possibility.**
 
-My path through design, psychology, marketing, and business analytics shapes how I build: understand the person, map the complete user journey, design the system around it, and test whether it delivers.
+I’m a product-minded builder and analyst: I build and test AI products, from experiment design to shipping. My portfolio connects user problems to system choices, interface decisions, and the evidence used to evaluate them.
 
-This portfolio brings that story together with selected AI projects and the thinking behind them.
+## What the work demonstrates
 
-## Inside the portfolio
+The AI project cards describe a user problem and stack, with explicit prompts for the key decision, testing, and UX change. Those prompts are unfinished author notes—not claims of completed validation.
 
-- **My story:** four interactive chapters tracing the perspectives I bring to product building.
-- **How I build:** a workflow that starts with user needs and brings AI collaborators into the technical design.
-- **Selected work:** real interface screenshots and links to working project demos.
-- **Contact:** a direct link to my LinkedIn profile.
+Experimentation & Customer Analytics is a team course project covering A/B testing analysis, uplift modeling, return on marketing expenditure (ROME) analysis, and churn prediction. **These analyses use course case-study datasets; they are not live experiments.** Findings and individual contributions remain to be filled in.
 
-The visual design pairs a warm rose palette with editorial typography, personal photography, and subtle motion. The layout adapts to desktop and mobile, with keyboard navigation for story chapters, visible focus indicators, and reduced-motion support.
+The story traces four perspectives—design, psychology, marketing, and analytics—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
 
-## Selected projects
+## Author notes to complete
 
-| Project | What it explores | Demo |
-| --- | --- | --- |
-| Eric’s Auto Care | An AI assistant for service questions and appointment booking at a small auto shop | [Open project](https://small-business-agent.vercel.app) |
-| Live Suggestion Agent | Context-aware assistance during live conversations | [Open project](https://twinmind-live-suggestion-liart.vercel.app) |
-| Email Intelligence | Turning email threads into structured tasks and relationships with GraphRAG | [Open project](https://huggingface.co/spaces/rsm-wew068/automated-task-manager) |
+For each of **Eric’s Auto Care**, **Live Suggestion Agent**, and **Email Intelligence**:
 
-Project demos run independently of the portfolio. Their availability and access requirements depend on their respective hosts.
+- **Key decision:** architecture or design choice, alternative considered, and reason for the choice.
+- **How I tested it:** checks performed, one failure case found, and the change made.
+- **UX decision:** user goal, concrete interface or flow choice, sticking point, and the change made.
 
-## Built with
+For **Experimentation & Customer Analytics**:
 
-**Next.js App Router · React · TypeScript · CSS · Vercel**
+- **What I found:** a supported finding, evaluation metric, and limitation.
+- **My role:** personal contribution to the team project, distinguished from teammates’ work.
 
-The home page is statically rendered, with a client component for the interactive story. Images use Next.js image optimization. This version needs no database, API keys, or environment variables.
+All 11 `[TODO]` placeholders are in `app/page.tsx`. Replace them with evidence from the projects before treating the cards as finished case studies.
 
-## Run locally
+## Portfolio experience
 
-Use a Node.js version supported by Next.js 16 (20.9 or later) and npm.
+Built with Next.js App Router, React, TypeScript, and CSS. The existing warm rose palette, project screenshots, personal photography, and responsive design accompany keyboard-accessible story chapters, visible focus indicators, contrast fixes, and reduced-motion support.
+
+Project demos run independently; availability and access requirements depend on their hosts.
+
+[LinkedIn](https://www.linkedin.com/in/wei-hsien-wang-b21922230/) · [GitHub](https://github.com/rsm-wew068)
+
+<details>
+<summary><strong>Development</strong> — local setup, structure, and deployment</summary>
+
+### Run locally
+
+Use a Node.js version compatible with Next.js 16 and npm.
 
 ```sh
 git clone https://github.com/rsm-wew068/weihsien-portfolio.git
@@ -42,60 +56,29 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000).
-
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run typecheck` | Check TypeScript types |
-| `npm run build` | Build the production app |
-| `npm start` | Serve the production build locally |
-
-Before publishing changes, run:
+Open [localhost:3000](http://localhost:3000). Before publishing, run:
 
 ```sh
 npm run typecheck
 npm run build
 ```
 
-## Project structure
+`npm start` serves the production build locally.
 
-```text
-app/
-  layout.tsx          Site metadata and root layout
-  page.tsx            Introduction, story, workflow, projects, and contact
-  globals.css         Visual styles, responsive layouts, and motion preferences
-components/
-  Journey.tsx         Interactive story chapters and keyboard controls
-public/
-  projects/           Screenshots of the project interfaces
-  rachel-coast.jpg    Home-page portrait
-  golden-gate.jpg     Contact-section landscape photo
-```
+### Structure
 
-To update the portfolio:
-
-- Edit the introduction, project cards, or contact links in `app/page.tsx`.
-- Edit the four story chapters in `components/Journey.tsx`.
-- Adjust colors, spacing, and responsive styles in `app/globals.css`.
-- Add photos and screenshots to `public/`, then reference their paths in the page.
-
-## Deploy on Vercel
-
-Import this repository into Vercel with these settings:
-
-| Setting | Value |
+| File / folder | Purpose |
 | --- | --- |
-| Framework | Next.js |
-| Root directory | Repository root (`./`) |
-| Build command | Default (`npm run build`) |
-| Output directory | Default Next.js setting |
-| Environment variables | None required |
+| `app/page.tsx` | Hero, project content and placeholders, workflow, contact |
+| `app/layout.tsx` | Root layout and site metadata |
+| `app/globals.css` | Palette, responsive styling, focus states, motion preferences |
+| `components/Journey.tsx` | Story chapters and keyboard controls |
+| `public/` | Portrait, landscape photo, and project screenshots |
 
-With the GitHub integration connected, pushes to the configured production branch deploy automatically; other branches can be reviewed through preview deployments.
+### Vercel
 
-This repository is independent of the original GitHub Pages and Cloud Run portfolio. Changes here do not deploy that older site.
+Import this repository, select **Next.js**, and use the repository root (`./`). Leave build and output settings at their Next.js defaults. No API keys, database, or environment variables are required for this version.
 
-## Connect
+With the GitHub integration connected, pushes to the configured production branch deploy automatically, and other branches can receive preview deployments. This repo is independent of the older GitHub Pages / Cloud Run portfolio.
 
-[LinkedIn](https://www.linkedin.com/in/wei-hsien-wang-b21922230/) · [GitHub](https://github.com/rsm-wew068)
+</details>
