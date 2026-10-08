@@ -28,7 +28,7 @@ I built the systems and completed the analyses presented here. Each AI card conn
 
 Customer Analytics covers A/B testing analysis, uplift modeling, return on marketing expenditure (ROME), and churn prediction. **These analyses use course case-study datasets; they are not live experiments.** Projected outcomes depend on the cases’ assumptions.
 
-The story traces four perspectives—design, psychology, marketing, and analytics—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
+The story traces four perspectives—design, psychology, marketing, and AI & product—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
 
 ## Portfolio experience
 
