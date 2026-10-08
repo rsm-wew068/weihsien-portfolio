@@ -1,4 +1,5 @@
 'use client';
+import Icon from '@/components/Icon';
 import { useState } from 'react';
 const chapters = [
   { name: 'Design', time: 'High school · Art & Design Officer', question: 'What makes someone stop and look?', title: 'First, I learned to see.', text: 'As the Model United Nations club’s Art & Design Officer, I learned how composition guides attention. A thoughtful layout could make an idea feel clearer, more inviting, and worth exploring.', takeaway: 'Make the first impression mean something.', mark: '◐' },
@@ -12,11 +13,11 @@ export default function Journey() {
   const chapter = chapters[active];
   return <div className="journey">
     <div className="chapter-tabs" role="tablist" aria-label="My story">
-      {chapters.map((item, i) => <button key={item.name} id={`chapter-tab-${i}`} role="tab" aria-selected={active === i} aria-controls="chapter-panel" tabIndex={active === i ? 0 : -1} onClick={() => setActive(i)} onKeyDown={event => { let next = i; if (event.key === 'ArrowRight') next = (i + 1) % chapters.length; else if (event.key === 'ArrowLeft') next = (i + chapters.length - 1) % chapters.length; else if (event.key === 'Home') next = 0; else if (event.key === 'End') next = chapters.length - 1; else return; event.preventDefault(); setActive(next); document.getElementById(`chapter-tab-${next}`)?.focus(); }}><span>0{i + 1}</span>{item.name}<i>{item.mark}</i></button>)}
+      {chapters.map((item, i) => <button key={item.name} id={`chapter-tab-${i}`} role="tab" aria-selected={active === i} aria-controls="chapter-panel" tabIndex={active === i ? 0 : -1} onClick={() => setActive(i)} onKeyDown={event => { let next = i; if (event.key === 'ArrowRight') next = (i + 1) % chapters.length; else if (event.key === 'ArrowLeft') next = (i + chapters.length - 1) % chapters.length; else if (event.key === 'Home') next = 0; else if (event.key === 'End') next = chapters.length - 1; else return; event.preventDefault(); setActive(next); document.getElementById(`chapter-tab-${next}`)?.focus(); }}><span>0{i + 1}</span>{item.name}<i>{item.mark === '✳' ? <Icon name="star"/> : item.mark === '↗' ? <Icon name="arrow"/> : item.mark}</i></button>)}
     </div>
     <div className="chapter-panel" id="chapter-panel" role="tabpanel" aria-labelledby={`chapter-tab-${active}`}>
-      <div className="chapter-art" aria-hidden="true"><div className={`art-shape shape-${active}`} key={active}>{chapter.mark}</div><span>A new lens. A new question.</span></div>
-      <div className="chapter-copy" key={chapter.name}><p className="eyebrow">{chapter.time}</p><h3>{chapter.title}</h3><p>{chapter.text}</p><blockquote>“{chapter.question}”</blockquote><div className="takeaway"><span>What I carry forward</span><strong>{chapter.takeaway}</strong></div>{chapter.evidence && <a className="chapter-evidence" href={chapter.evidence.href} target="_blank" rel="noreferrer">{chapter.evidence.label} <span aria-hidden="true">↗</span></a>}</div>
+      <div className="chapter-art" aria-hidden="true"><div className={`art-shape shape-${active}`} key={active}>{chapter.mark === '✳' ? <Icon name="star"/> : chapter.mark === '↗' ? <Icon name="arrow"/> : chapter.mark}</div><span>A new lens. A new question.</span></div>
+      <div className="chapter-copy" key={chapter.name}><p className="eyebrow">{chapter.time}</p><h3>{chapter.title}</h3><p>{chapter.text}</p><blockquote>“{chapter.question}”</blockquote><div className="takeaway"><span>What I carry forward</span><strong>{chapter.takeaway}</strong></div>{chapter.evidence && <a className="chapter-evidence" href={chapter.evidence.href} target="_blank" rel="noreferrer">{chapter.evidence.label} <span aria-hidden="true"><Icon name="arrow"/></span></a>}</div>
     </div>
     <p className="journey-footnote">Five perspectives. One way of building: start with people.</p>
   </div>;

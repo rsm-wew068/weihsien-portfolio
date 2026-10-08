@@ -32,3 +32,5 @@
 .contact-info{position:relative;z-index:1;font-size:14px;line-height:1.8;overflow-wrap:anywhere}.contact-info p{margin:0 0 12px}
 
 .contact-info a[href^="https://"]{text-decoration:underline;text-underline-offset:3px}
+
+.ui-icon{display:inline-block;width:1em;height:1em;vertical-align:-.15em;flex-shrink:0}.portrait-star .ui-icon{display:block}.project-cta .ui-icon,.work-heading>a .ui-icon,footer>a .ui-icon{margin-left:4px}
