@@ -75,7 +75,7 @@ const projects = [
 export default function Home() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <header className="header"><a className="brand" href="#">Rachel<span>Wang</span><i><Icon name="star"/></i></a><nav aria-label="Main navigation"><a href="#work">Selected work</a><a href="#story">My story</a><a href="mailto:ygweihsien910622@gmail.com" className="nav-contact">Let’s talk <span><Icon name="arrow"/></span></a></nav></header>
+    <header className="header"><a className="brand" href="#">Rachel<span>Wang</span><i><Icon name="star"/></i></a><nav aria-label="Main navigation"><a href="#story">My story</a><a href="mailto:ygweihsien910622@gmail.com" className="nav-contact">Let’s talk <span><Icon name="arrow"/></span></a></nav></header>
     <main id="main">
       <section className="hero">
         <div className="hero-copy"><p className="eyebrow"><span className="small-star"><Icon name="star"/></span> A little curiosity goes a long way</p><h1>People first.<br/>Then <em>possibility.</em></h1><p className="hero-subtitle">Builds and tests agentic AI products, from experiment design to shipping</p><p className="hero-intro">Hi, I'm Rachel, a product-minded builder. I turn user needs into AI systems and use data to decide what to build next.</p><div className="hero-actions"><a href="#work" className="primary-link">See my work <span aria-hidden="true"><Icon name="down"/></span></a><a href="#story" className="hero-story-link">Here's how I got here <span aria-hidden="true"><Icon name="arrow"/></span></a></div><div className="hero-caption"><span>MS Business Analytics, UC San Diego</span></div></div>
