@@ -11,9 +11,9 @@
 
 **People first. Then possibility.**
 
-I’m a product-minded builder and analyst: I build and test AI products, from experiment design to shipping. My portfolio connects user problems to system choices, interface decisions, and the evidence used to evaluate them.
+I’m a product-minded builder and analyst: I build and test AI products, from experiment design to shipping. I design the workflow and architecture, then build with AI tools. My portfolio connects user problems to system choices, interface decisions, and the evidence used to evaluate them.
 
-Selected work initially shows BlindSpot AI, Live Suggestion Agent, and Auto Care Assistant in one desktop row. **Show more** reveals Muse.AI, Email Intelligence, and Customer Analytics in that order; **Show less** collapses them again.
+Selected work sits directly after the hero, before the story chapters, and initially shows BlindSpot AI, Live Suggestion Agent, and Auto Care Assistant in one desktop row. **Show more** reveals Muse.AI, Email Intelligence, and Customer Analytics in that order; **Show less** collapses them again.
 
 ## What the work demonstrates
 
@@ -28,7 +28,7 @@ I built the systems and completed the analyses presented here. Each AI card conn
 
 Customer Analytics covers A/B testing analysis, uplift modeling, return on marketing expenditure (ROME), and churn prediction. **These analyses use course case-study datasets; they are not live experiments.** Projected outcomes depend on the cases’ assumptions.
 
-The story traces five perspectives—design, psychology, marketing, analytics, and AI & Product—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
+The story traces five perspectives—design, psychology, problem framing, analytics, and AI & Product—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
 
 ## Portfolio experience
 
