@@ -26,7 +26,7 @@ const projects = [
     link: 'https://twinmind-live-suggestion-liart.vercel.app', image: '/projects/live-agent.jpg', color: 'green', cta: 'Explore the live project',
   },
   {
-    title: 'Eric’s Auto Care', label: 'AI AGENT · SMALL BUSINESS',
+    title: 'Auto Care Assistant', label: 'AI AGENT · SMALL BUSINESS',
     problem: 'Customers need service answers and appointment help while a small auto shop’s staff are busy with repairs.',
     stack: ['React', 'Python', 'Groq / LLaMA', 'Supabase'],
     details: [
