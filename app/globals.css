@@ -28,3 +28,5 @@
 
 .approach + .contact{margin-top:80px}
 @media(max-width:760px){.approach + .contact{margin-top:48px}}
+
+.contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:16px;position:relative;z-index:1}.contact-links a{display:inline-flex;align-items:center;gap:16px;font-size:14px;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--ink)}.contact-links a span{font-size:12px}.contact-links a:hover{text-decoration-thickness:2px}@media(max-width:760px){.contact-links a{flex-wrap:wrap;gap:8px}}
