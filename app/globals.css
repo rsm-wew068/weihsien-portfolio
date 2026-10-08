@@ -25,3 +25,6 @@
 /* Keep selected work below the initial viewport. */
 .hero{min-height:calc(100svh - 108px);padding-bottom:64px}
 @media(max-width:760px){.hero{min-height:calc(100svh - 88px);padding-bottom:64px}}
+
+.approach + .contact{margin-top:80px}
+@media(max-width:760px){.approach + .contact{margin-top:48px}}
