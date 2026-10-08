@@ -11,7 +11,7 @@ const projects = [
       ["How I tested it", "A live two-round, 12-scenario smoke test exposed invalid second-round proposals. I added strict schema output and local validation; regression tests also cover collision detection and exact replay. This is prototype evidence, not road-safety validation."],
       ["UX decision", "Investigators need to compare the same moment across controllers. I preserve replay time when switching controllers, offer 2D and 3D views, and keep a 2D fallback when WebGL fails."],
     ],
-    link: 'https://github.com/rsm-wew068/blindspot-ai', image: null, color: 'pink', cta: 'Explore the project',
+    link: 'https://github.com/rsm-wew068/blindspot-ai', image: '/projects/blindspot.png', color: 'pink', cta: 'Explore the project',
     visualLabel: 'Synthetic simulation · local prototype', visualText: 'Find the failure. Replay the evidence.',
   },
   {
