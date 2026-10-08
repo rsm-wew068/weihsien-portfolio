@@ -17,26 +17,18 @@ Selected work initially shows BlindSpot AI, Live Suggestion Agent, and Eric’s 
 
 ## What the work demonstrates
 
-The AI project cards describe a user problem and stack, with explicit prompts for the key decision, testing, and UX change. Those prompts are unfinished author notes—not claims of completed validation.
+I built the systems and completed the analyses presented here. Each AI card connects the user problem to an architectural choice, validation evidence, and a concrete interface decision.
 
-Experimentation & Customer Analytics is a team course project covering A/B testing analysis, uplift modeling, return on marketing expenditure (ROME) analysis, and churn prediction. **These analyses use course case-study datasets; they are not live experiments.** Findings and individual contributions remain to be filled in.
+- **BlindSpot AI:** deterministic paired-controller simulation, bounded AI scenario proposals, replayable evidence, and strict schema validation after a live integration failure. See the project’s [verification log](https://github.com/rsm-wew068/blindspot-ai/blob/main/VALIDATION.md). Small prototype trials do not establish road safety or a general AI-search advantage.
+- **Live Suggestion Agent:** structured suggestions, recent-context windowing, two-layer deduplication, and on-demand streaming answers. The repository includes 43 tests across eight suites.
+- **Eric’s Auto Care:** stateless conversation handling with persistent booking tools. Tests cover missing and blank tool fields; broader format validation remains future work.
+- **Muse.AI:** photo interpretation → Spotify retrieval → contextual critique, with conversational refinement. The README’s mismatch scenarios illustrate the validation approach; measured recommendation-quality results are not published.
+- **Email Intelligence:** semantic retrieval plus graph relationships, human review before storage, RAGAS assessment, and workflow tracing. Published benchmark scores are not available.
+- **Experimentation & Customer Analytics:** I completed the data preparation, modeling, evaluation, and interpretation shown in the notebooks. In the [TZ Gaming analysis](https://github.com/rsm-wew068/mgta495-customer-analytics/blob/main/tz-gaming.ipynb), the preferred targeting model changes with the impression-budget constraint—showing why profit and ROME both matter.
+
+Customer Analytics covers A/B testing analysis, uplift modeling, return on marketing expenditure (ROME), and churn prediction. **These analyses use course case-study datasets; they are not live experiments.** Projected outcomes depend on the cases’ assumptions.
 
 The story traces four perspectives—design, psychology, marketing, and analytics—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
-
-## Author notes to complete
-
-For each of **BlindSpot AI**, **Live Suggestion Agent**, **Eric’s Auto Care**, **Muse.AI**, and **Email Intelligence**:
-
-- **Key decision:** architecture or design choice, alternative considered, and reason for the choice.
-- **How I tested it:** checks performed, one failure case found, and the change made.
-- **UX decision:** user goal, concrete interface or flow choice, sticking point, and the change made.
-
-For **Experimentation & Customer Analytics**:
-
-- **What I found:** a supported finding, evaluation metric, and limitation.
-- **My role:** personal contribution to the team project, distinguished from teammates’ work.
-
-All 17 `[TODO]` placeholders are in `app/page.tsx`. Replace them with evidence from the projects before treating the cards as finished case studies.
 
 ## Portfolio experience
 
@@ -73,7 +65,7 @@ npm run build
 
 | File / folder | Purpose |
 | --- | --- |
-| `app/page.tsx` | Hero, project content and placeholders, workflow, contact |
+| `app/page.tsx` | Hero, project case studies, workflow, contact |
 | `app/layout.tsx` | Root layout and site metadata |
 | `app/globals.css` | Palette, responsive styling, focus states, motion preferences |
 | `components/Journey.tsx` | Story chapters and keyboard controls |
