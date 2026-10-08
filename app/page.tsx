@@ -1,27 +1,18 @@
 import Image from 'next/image';
 import Journey from '@/components/Journey';
+import SelectedWork from '@/components/SelectedWork';
 const projects = [
   {
-    title: 'Eric’s Auto Care', label: 'AI AGENT · SMALL BUSINESS',
-    problem: 'Customers need service answers and appointment help while a small auto shop’s staff are busy with repairs.',
-    stack: ['React', 'Python', 'Groq / LLaMA', 'Supabase'],
+    title: 'BlindSpot AI', label: 'AI SYSTEMS · FAILURE INVESTIGATION',
+    problem: 'Builders of driving controllers need reproducible ways to investigate failures around an obstructed crosswalk before changing a controller.',
+    stack: ['Python', 'JavaScript', 'Three.js', 'NVIDIA Nemotron'],
     details: [
       ['Key decision', '[TODO] Name one architecture or design choice, the alternative you considered, and why you chose it.'],
       ['How I tested it', '[TODO] Describe what you checked, one failure case you found, and what you changed.'],
       ['UX decision', '[TODO] Describe the user’s goal, one interface or flow choice, where they could get stuck, and what you changed.'],
     ],
-    link: 'https://small-business-agent.vercel.app', image: '/projects/auto-care.jpg', color: 'pink', cta: 'Explore the live project',
-  },
-  {
-    title: 'Experimentation & Customer Analytics', label: 'EXPERIMENTATION · COURSE CASE STUDIES',
-    problem: 'Product teams need to distinguish incremental impact from predicted behavior when deciding which interventions to test and which customers need attention.',
-    stack: ['Python', 'Scikit-learn', 'XGBoost', 'Jupyter'],
-    details: [
-      ['Method', 'A/B testing analysis, uplift modeling, return on marketing expenditure (ROME) analysis, and churn prediction on course case-study datasets. These are case-study analyses, not live experiments.'],
-      ['What I found', '[TODO] Summarize a finding supported by the case-study data, the metric used, and a limitation.'],
-      ['My role', '[TODO] Identify your contribution to this team project and distinguish it from your teammates’ work.'],
-    ],
-    link: 'https://github.com/rsm-wew068/mgta495-customer-analytics', image: null, color: 'green', cta: 'Explore the case studies',
+    link: 'https://github.com/rsm-wew068/blindspot-ai', image: null, color: 'pink', cta: 'Explore the project',
+    visualLabel: 'Synthetic simulation · local prototype', visualText: 'Find the failure. Replay the evidence.',
   },
   {
     title: 'Live Suggestion Agent', label: 'REALTIME AI · CONVERSATION',
@@ -35,6 +26,29 @@ const projects = [
     link: 'https://twinmind-live-suggestion-liart.vercel.app', image: '/projects/live-agent.jpg', color: 'green', cta: 'Explore the live project',
   },
   {
+    title: 'Eric’s Auto Care', label: 'AI AGENT · SMALL BUSINESS',
+    problem: 'Customers need service answers and appointment help while a small auto shop’s staff are busy with repairs.',
+    stack: ['React', 'Python', 'Groq / LLaMA', 'Supabase'],
+    details: [
+      ['Key decision', '[TODO] Name one architecture or design choice, the alternative you considered, and why you chose it.'],
+      ['How I tested it', '[TODO] Describe what you checked, one failure case you found, and what you changed.'],
+      ['UX decision', '[TODO] Describe the user’s goal, one interface or flow choice, where they could get stuck, and what you changed.'],
+    ],
+    link: 'https://small-business-agent.vercel.app', image: '/projects/auto-care.jpg', color: 'pink', cta: 'Explore the live project',
+  },
+  {
+    title: 'Muse.AI', label: 'MULTI-AGENT AI · MUSIC DISCOVERY',
+    problem: 'Listeners who know the mood they want but not a song title need a way to turn a photo into relevant music discoveries.',
+    stack: ['Python', 'LangGraph', 'Gemini', 'Spotify API'],
+    details: [
+      ['Key decision', '[TODO] Name one architecture or design choice, the alternative you considered, and why you chose it.'],
+      ['How I tested it', '[TODO] Describe what you checked, one failure case you found, and what you changed.'],
+      ['UX decision', '[TODO] Describe the user’s goal, one interface or flow choice, where they could get stuck, and what you changed.'],
+    ],
+    link: 'https://github.com/rsm-wew068/muse-ai', image: null, color: 'purple', cta: 'Explore the project',
+    visualLabel: 'Photo-driven music discovery', visualText: 'From a moment to a soundtrack.',
+  },
+  {
     title: 'Email Intelligence', label: 'GRAPHRAG · WORKFLOWS',
     problem: 'People managing long email threads struggle to identify obligations, dependencies, and the tasks that need their attention.',
     stack: ['Python', 'LangGraph', 'Neo4j', 'FAISS', 'Streamlit'],
@@ -44,6 +58,17 @@ const projects = [
       ['UX decision', '[TODO] Describe the user’s goal, one interface or flow choice, where they could get stuck, and what you changed.'],
     ],
     link: 'https://huggingface.co/spaces/rsm-wew068/automated-task-manager', image: '/projects/email-intelligence.jpg', color: 'purple', cta: 'Explore the live project',
+  },
+  {
+    title: 'Experimentation & Customer Analytics', label: 'EXPERIMENTATION · COURSE CASE STUDIES',
+    problem: 'Product teams need to distinguish incremental impact from predicted behavior when deciding which interventions to test and which customers need attention.',
+    stack: ['Python', 'Scikit-learn', 'XGBoost', 'Jupyter'],
+    details: [
+      ['Method', 'A/B testing analysis, uplift modeling, return on marketing expenditure (ROME) analysis, and churn prediction on course case-study datasets. These are case-study analyses, not live experiments.'],
+      ['What I found', '[TODO] Summarize a finding supported by the case-study data, the metric used, and a limitation.'],
+      ['My role', '[TODO] Identify your contribution to this team project and distinguish it from your teammates’ work.'],
+    ],
+    link: 'https://github.com/rsm-wew068/mgta495-customer-analytics', image: null, visualLabel: 'Course case-study datasets', visualText: 'Test the hypothesis. Measure the difference.', color: 'green', cta: 'Explore the case studies',
   },
 ];
 export default function Home() {
@@ -57,7 +82,7 @@ export default function Home() {
       </section>
       <section id="story" className="section story-section"><div className="section-heading"><p className="eyebrow">01 / The path that shaped me</p><h2>A winding path.<br/><em>A clear purpose.</em></h2><p>I’ve always been curious about what makes people care—and what makes a product worth coming back to. Each chapter gave me a different way to answer that question.</p></div><Journey/></section>
       <section className="approach section"><div><p className="eyebrow">02 / How I build</p><h2>The journey comes<br/>before the <em>pipeline.</em></h2><p className="approach-intro">I start with what someone wants to accomplish, where they get stuck, and what would make the next step feel effortless.</p><p>Then I work with AI collaborators to design the technical pipeline around that journey. Every feature has to earn its place in the user’s experience.</p></div><ol className="workflow"><li><span>01</span><div><h3>Understand the person</h3><p>Find the real need behind the request.</p></div><i>◎</i></li><li><span>02</span><div><h3>Map the whole journey</h3><p>Outline the experience, from first click to outcome.</p></div><i>↝</i></li><li><span>03</span><div><h3>Build with AI collaborators</h3><p>Design the system around the workflow.</p></div><i>✳</i></li><li><span>04</span><div><h3>Test. Learn. Make it better.</h3><p>Check whether it delivers for the people using it.</p></div><i>↗</i></li></ol></section>
-      <section id="work" className="section work-section"><div className="work-heading"><div><p className="eyebrow">03 / Ideas made real</p><h2>Curiosity, <em>in practice.</em></h2></div><a href="https://github.com/rsm-wew068" target="_blank" rel="noreferrer">More on GitHub ↗</a></div><div className="project-grid">{projects.map(project => <a className={`project-card ${project.color}`} href={project.link} key={project.title} target="_blank" rel="noreferrer"><div className="project-art">{project.image ? <Image src={project.image} alt={`${project.title} interface screenshot`} fill sizes="(max-width: 760px) 90vw, 380px" className="project-screenshot"/> : <div style={{ padding: '28px', textAlign: 'center' }}><span className="eyebrow">Course case-study datasets</span><p style={{ fontFamily: 'Georgia, serif', fontSize: '24px', margin: '12px 0' }}>Test the hypothesis.<br/>Measure the difference.</p></div>}<i aria-hidden="true">↗</i></div><p className="eyebrow">{project.label}</p><h3>{project.title}</h3><dl style={{ fontSize: '12px', lineHeight: 1.8, margin: '16px 0 24px' }}><dt><strong>Problem</strong></dt><dd style={{ margin: '0 0 14px', color: 'var(--muted)' }}>{project.problem}</dd>{project.details.map(([label, text]) => <div key={label}><dt><strong>{label}</strong></dt><dd style={{ margin: '0 0 14px', color: 'var(--muted)' }}>{text}</dd></div>)}<dt><strong>Stack</strong></dt><dd style={{ margin: '7px 0 0' }}><ul aria-label={`${project.title} stack`} style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', listStyle: 'none', padding: 0, margin: 0 }}>{project.stack.map(tag => <li key={tag} style={{ border: '1px solid var(--line)', borderRadius: '20px', padding: '3px 9px', fontSize: '10px' }}>{tag}</li>)}</ul></dd></dl><span className="project-cta">{project.cta} ↗</span></a>)}</div></section>
+      <section id="work" className="section work-section"><div className="work-heading"><div><p className="eyebrow">03 / Ideas made real</p><h2>Curiosity, <em>in practice.</em></h2></div><a href="https://github.com/rsm-wew068" target="_blank" rel="noreferrer">More on GitHub ↗</a></div><SelectedWork projects={projects}/></section>
       <section className="contact section"><p className="eyebrow">Something worth building?</p><h2>Let’s make people<br/><em>love using it.</em></h2><a href="https://www.linkedin.com/in/wei-hsien-wang-b21922230/" target="_blank" rel="noreferrer" className="primary-link">Start a conversation <span>↗</span></a><div className="contact-photo"><Image src="/golden-gate.jpg" alt="Golden Gate Bridge over San Francisco Bay" fill sizes="(max-width: 760px) 80vw, 330px"/></div></section>
     </main><footer><a className="brand" href="#">rachel<span>wang</span><i>✳</i></a><p>Made with curiosity. Built around people.</p><a href="https://github.com/rsm-wew068" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
   </>;
