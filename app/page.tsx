@@ -60,17 +60,7 @@ const projects = [
     ],
     link: 'https://huggingface.co/spaces/rsm-wew068/automated-task-manager', image: '/projects/email-intelligence.jpg', color: 'purple', cta: 'Explore the live project',
   },
-  {
-    title: 'Experimentation & Customer Analytics', label: 'EXPERIMENTATION · COURSE CASE STUDIES',
-    problem: 'Product teams need to distinguish incremental impact from predicted behavior when deciding which interventions to test and which customers need attention.',
-    stack: ['Python', 'Scikit-learn', 'XGBoost', 'Jupyter'],
-    details: [
-      ['Method', 'A/B testing analysis, uplift modeling, return on marketing expenditure (ROME) analysis, and churn prediction on course case-study datasets. These are case-study analyses, not live experiments.'],
-      ['What I found', "In the TZ Gaming case, the best targeting choice changed with the budget constraint: logistic regression led projected profit when selecting prospects, while the proprietary model led when purchasing exactly 20 million impressions. I compared profit and ROME; these projections depend on the case’s conversion, lifetime-value, and cost assumptions."],
-      ['My role', "I completed the data preparation, modeling, evaluation, and interpretation presented here, connecting treatment-effect analysis, profitability comparisons, and churn predictions to product decisions."],
-    ],
-    link: 'https://github.com/rsm-wew068/mgta495-customer-analytics', image: null, visualLabel: 'Course case-study datasets', visualText: 'Test the hypothesis. Measure the difference.', color: 'green', cta: 'Explore the case studies',
-  },
+
 ];
 export default function Home() {
   return <>
