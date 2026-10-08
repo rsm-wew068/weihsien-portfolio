@@ -24,11 +24,11 @@ I built the systems and completed the analyses presented here. Each AI card conn
 - **Auto Care Assistant:** stateless conversation handling with persistent booking tools. Tests cover missing and blank tool fields; broader format validation remains future work.
 - **Muse.AI:** photo interpretation → Spotify retrieval → contextual critique, with conversational refinement. The README’s mismatch scenarios illustrate the validation approach; measured recommendation-quality results are not published.
 - **Email Intelligence:** semantic retrieval plus graph relationships, human review before storage, RAGAS assessment, and workflow tracing. Published benchmark scores are not available.
-- **Experimentation & Customer Analytics:** I completed the data preparation, modeling, evaluation, and interpretation shown in the notebooks. In the [TZ Gaming analysis](https://github.com/rsm-wew068/mgta495-customer-analytics/blob/main/tz-gaming.ipynb), the preferred targeting model changes with the impression-budget constraint—showing why profit and ROME both matter.
+- **Experimentation & Customer Analytics:** I completed the data preparation, modeling, evaluation, and interpretation shown in the notebooks. In the [TZ Gaming analysis](https://github.com/rsm-wew068/mgta495-customer-analytics/blob/main/tz-gaming.ipynb), the preferred targeting model changes with the impression-budget constraint, showing why profit and ROME both matter.
 
 Customer Analytics covers A/B testing analysis, uplift modeling, return on marketing expenditure (ROME), and churn prediction. **These analyses use course case-study datasets; they are not live experiments.** Projected outcomes depend on the cases’ assumptions.
 
-The story traces five perspectives—design, psychology, problem framing, analytics, and AI & Product—with an emphasis on finding pain points, testing assumptions, and validating with data before building.
+The story traces five perspectives: design, psychology, problem framing, analytics, and AI & Product, with an emphasis on finding pain points, testing assumptions, and validating with data before building.
 
 ## Portfolio experience
 
@@ -39,7 +39,7 @@ Project demos run independently; availability and access requirements depend on 
 [LinkedIn](https://www.linkedin.com/in/wei-hsien-wang-b21922230/) · [GitHub](https://github.com/rsm-wew068)
 
 <details>
-<summary><strong>Development</strong> — local setup, structure, and deployment</summary>
+<summary><strong>Development</strong>: local setup, structure, and deployment</summary>
 
 ### Run locally
 
