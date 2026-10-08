@@ -30,3 +30,5 @@
 @media(max-width:760px){.approach + .contact{margin-top:48px}}
 
 .contact-info{position:relative;z-index:1;font-size:14px;line-height:1.8;overflow-wrap:anywhere}.contact-info p{margin:0 0 12px}
+
+.contact-info a[href^="https://"]{text-decoration:underline;text-underline-offset:3px}
