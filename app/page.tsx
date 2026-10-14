@@ -6,14 +6,14 @@ const projects = [
   {
     title: 'BlindSpot AI', label: 'AI SYSTEMS · FAILURE INVESTIGATION',
     problem: 'Builders of driving controllers need reproducible ways to investigate failures around an obstructed crosswalk before changing a controller.',
-    stack: ['Python', 'JavaScript', 'Three.js', 'NVIDIA Nemotron'],
+    stack: ['React / Vite', 'Three.js', 'Python / Waitress', 'NVIDIA Nemotron', 'Nebius Token Factory', 'Docker / Render'],
     details: [
-      ["Key decision", "AI proposes bounded scenarios; deterministic physics computes outcomes for both controllers on identical inputs. This keeps failure evidence replayable instead of relying on an LLM’s judgment."],
-      ["How I tested it", "A live two-round, 12-scenario smoke test exposed invalid second-round proposals. I added strict schema output and local validation; regression tests also cover collision detection and exact replay. This is prototype evidence, not road-safety validation."],
-      ["UX decision", "Investigators need to compare the same moment across controllers. I preserve replay time when switching controllers, offer 2D and 3D views, and keep a 2D fallback when WebGL fails."],
+      ["Key decision", "An adaptive testing agent proposes bounded scenarios and refines its next batch from simulated outcomes. Deterministic Python physics evaluates both controllers on identical inputs, keeping every failure reproducible."],
+      ["How I tested it", "One 12-scenario AI run found 7 reactive-controller collision cases, versus 0.85 on average across 100 pedestrian-only random runs with the same scenario budget. 33 automated tests cover backend and replay behavior. This is simulation evidence from one AI run, not a general search advantage."],
+      ["UX decision", "A React interface synchronizes controller comparisons across 2D and Three.js replays. Impact markers, measured collision speed, and optional sound make failures easier to inspect; a local notebook preserves investigations for comparison and JSON export."],
     ],
-    link: 'https://blindspot-ai-p9jx.onrender.com/', image: '/projects/blindspot.png', color: 'pink', cta: 'Explore the project',
-    visualLabel: 'Synthetic simulation · local prototype', visualText: 'Find the failure. Replay the evidence.',
+    link: 'https://blindspot-ai-p9jx.onrender.com/', image: '/projects/blindspot.png', color: 'pink', cta: 'View demo (login required)',
+    visualLabel: 'Simulated controller evaluation', visualText: 'Find the failure. Replay the evidence.',
   },
   {
     title: 'Live Suggestion Agent', label: 'REALTIME AI · CONVERSATION',
