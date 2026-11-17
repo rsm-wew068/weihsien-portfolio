@@ -1,80 +1,198 @@
-import Icon from '@/components/Icon';
-import Image from 'next/image';
-import Journey from '@/components/Journey';
-import SelectedWork from '@/components/SelectedWork';
-const projects = [
+import PortfolioStudio from '@/components/PortfolioStudio';
+import type { ProjectData } from '@/components/StudioDesk';
+
+const projects: ProjectData[] = [
   {
-    title: 'BlindSpot AI', label: 'AI SYSTEMS · FAILURE INVESTIGATION',
-    problem: 'Builders of driving controllers need reproducible ways to investigate failures around an obstructed crosswalk before changing a controller.',
-    stack: ['React / Vite', 'Three.js', 'Python / Waitress', 'NVIDIA Nemotron', 'Nebius Token Factory', 'Docker / Render'],
-    details: [
-      ["Key decision", "An adaptive testing agent proposes bounded scenarios and refines its next batch from simulated outcomes. Deterministic Python physics evaluates both controllers on identical inputs, keeping every failure reproducible."],
-      ["How I tested it", "One 12-scenario AI run found 7 reactive-controller collision cases, versus 0.85 on average across 100 pedestrian-only random runs with the same scenario budget. 33 automated tests cover backend and replay behavior. This is simulation evidence from one AI run, not a general search advantage."],
-      ["UX decision", "A React interface synchronizes controller comparisons across 2D and Three.js replays. Impact markers, measured collision speed, and optional sound make failures easier to inspect; a local notebook preserves investigations for comparison and JSON export."],
+    title: 'BlindSpot AI',
+    emoji: '🚗',
+    badge: '7 vs 0.85 Collisions',
+    label: 'AI SYSTEMS · FAILURE INVESTIGATION',
+    problem:
+      'Builders of driving controllers need reproducible ways to investigate failures around an obstructed crosswalk before changing a controller.',
+    stack: [
+      'React / Vite',
+      'Three.js',
+      'Python / Waitress',
+      'NVIDIA Nemotron',
+      'Nebius Token Factory',
+      'Docker / Render',
     ],
-    link: 'https://blindspot-ai-p9jx.onrender.com/', image: '/projects/blindspot.png', color: 'pink', cta: 'View demo (login required)',
-    visualLabel: 'Simulated controller evaluation', visualText: 'Find the failure. Replay the evidence.',
+    details: [
+      [
+        'Key decision',
+        'An adaptive testing agent proposes bounded scenarios and refines its next batch from simulated outcomes. Deterministic Python physics evaluates both controllers on identical inputs, keeping every failure reproducible.',
+      ],
+      [
+        'How I tested it',
+        'One 12-scenario AI run found 7 reactive-controller collision cases, versus 0.85 on average across 100 pedestrian-only random runs with the same scenario budget. 33 automated tests cover backend and replay behavior. This is simulation evidence from one AI run, not a general search advantage.',
+      ],
+      [
+        'UX decision',
+        'A React interface synchronizes controller comparisons across 2D and Three.js replays. Impact markers, measured collision speed, and optional sound make failures easier to inspect; a local notebook preserves investigations for comparison and JSON export.',
+      ],
+    ],
+    link: 'https://blindspot-ai-p9jx.onrender.com/',
+    repo: 'https://github.com/rsm-wew068/blindspot-ai',
+    image: '/projects/blindspot.png',
+    color: 'clay',
+    cta: 'View demo (login required)',
   },
   {
-    title: 'Live Suggestion Agent', label: 'REALTIME AI · CONVERSATION',
-    problem: 'People in live conversations need relevant assistance before the moment passes, without losing the thread of the discussion.',
+    title: 'Live Suggestion Agent',
+    emoji: '🎙️',
+    badge: '43 Automated Tests',
+    label: 'REALTIME AI · CONVERSATION',
+    problem:
+      'People in live conversations need relevant assistance before the moment passes, without losing the thread of the discussion.',
     stack: ['Next.js', 'Groq Whisper', 'GPT-OSS', 'Vercel'],
     details: [
-      ["Key decision", "I use structured JSON suggestions and short recent-context windows, with longer context for detailed answers. Two-layer deduplication reduces repetition without another model call, at the cost of occasionally filtering a valid rephrasing."],
-      ["How I tested it", "The repo includes 43 tests across API, UI, recording, and client behavior. Malformed JSON and suggestions missing a type or preview are covered; parsing falls back to an empty list and filters incomplete cards."],
-      ["UX decision", "People need help while staying in the conversation. I show up to three useful previews, then stream a detailed answer only when a card is selected, keeping extra explanation out of the immediate flow."],
+      [
+        'Key decision',
+        'I use structured JSON suggestions and short recent-context windows, with longer context for detailed answers. Two-layer deduplication reduces repetition without another model call, at the cost of occasionally filtering a valid rephrasing.',
+      ],
+      [
+        'How I tested it',
+        'The repo includes 43 tests across API, UI, recording, and client behavior. Malformed JSON and suggestions missing a type or preview are covered; parsing falls back to an empty list and filters incomplete cards.',
+      ],
+      [
+        'UX decision',
+        'People need help while staying in the conversation. I show up to three useful previews, then stream a detailed answer only when a card is selected, keeping extra explanation out of the immediate flow.',
+      ],
     ],
-    link: 'https://twinmind-live-suggestion-liart.vercel.app', image: '/projects/live-agent.jpg', color: 'green', cta: 'Explore the live project',
+    link: 'https://twinmind-live-suggestion-liart.vercel.app',
+    repo: 'https://github.com/rsm-wew068/live-suggestion-agent',
+    image: '/projects/live-agent.jpg',
+    color: 'ochre',
+    cta: 'Explore the live project',
   },
   {
-    title: 'Auto Care Assistant', label: 'AI AGENT · SMALL BUSINESS',
-    problem: 'Customers need service answers and appointment help while a small auto shop’s staff are busy with repairs.',
+    title: 'Auto Care Assistant',
+    emoji: '🔧',
+    badge: 'Multi-Turn Booking',
+    label: 'AI AGENT · SMALL BUSINESS',
+    problem:
+      'Customers need service answers and appointment help while a small auto shop’s staff are busy with repairs.',
     stack: ['React', 'Python', 'Groq / LLaMA', 'Supabase'],
     details: [
-      ["Key decision", "I keep conversation history in the client and use stateless Python functions, while saving bookings and inquiries in Supabase. This separates temporary chat context from durable customer requests without server-side sessions."],
-      ["How I tested it", "Tool tests cover missing booking fields, blank values, incomplete inquiries, and unknown tools. Missing information returns a readable follow-up instead of crashing. Date and phone-format validation remain future improvements."],
-      ["UX decision", "A customer trying to book may not know every required detail upfront. The mobile chat collects information over multiple turns and asks for missing fields before submitting the appointment."],
+      [
+        'Key decision',
+        'I keep conversation history in the client and use stateless Python functions, while saving bookings and inquiries in Supabase. This separates temporary chat context from durable customer requests without server-side sessions.',
+      ],
+      [
+        'How I tested it',
+        'Tool tests cover missing booking fields, blank values, incomplete inquiries, and unknown tools. Missing information returns a readable follow-up instead of crashing. Date and phone-format validation remain future improvements.',
+      ],
+      [
+        'UX decision',
+        'A customer trying to book may not know every required detail upfront. The mobile chat collects information over multiple turns and asks for missing fields before submitting the appointment.',
+      ],
     ],
-    link: 'https://small-business-agent.vercel.app', image: '/projects/auto-care.jpg', color: 'pink', cta: 'Explore the live project',
+    link: 'https://small-business-agent.vercel.app',
+    repo: 'https://github.com/rsm-wew068/small_business_agent',
+    image: '/projects/auto-care.jpg',
+    color: 'sage',
+    cta: 'Explore the live project',
   },
   {
-    title: 'Muse.AI', label: 'MULTI-AGENT AI · MUSIC DISCOVERY',
-    problem: 'Listeners who know the mood they want but not a song title need a way to turn a photo into relevant music discoveries.',
-    stack: ['Python', 'LangGraph', 'Gemini', 'Spotify API'],
+    title: 'Muse.AI',
+    emoji: '🎵',
+    badge: 'Critic Agent Loop',
+    label: 'MULTI-AGENT AI · MUSIC DISCOVERY',
+    problem:
+      'Listeners who know the mood they want but not a song title need a way to turn a photo into relevant music discoveries.',
+    stack: ['Next.js', 'Python', 'LangGraph', 'Gemini', 'Spotify API', 'Cloud Run'],
     details: [
-      ["Key decision", "I retrieve real Spotify candidates, then use a separate curator to rank them against the photo’s narrative. This adds a context check beyond keyword search and constrains recommendations to retrieved track IDs."],
-      ["How I tested it", "Validation compares candidates with the scene narrative; the README illustrates the mismatch of an aggressive track with a sleeping-baby photo. I added a critic stage and candidate-ID matching. The repo does not publish a measured quality benchmark or automated test results."],
-      ["UX decision", "A listener may like the scene but want a different energy. Conversational refinement reuses the photo context, so “make it more upbeat” triggers another search without making them upload the image again."],
+      [
+        'Key decision',
+        'I retrieve real Spotify candidates, then use a separate curator and critic stage to rank them against the photo’s narrative. This adds a context check beyond keyword search and constrains recommendations to retrieved track IDs.',
+      ],
+      [
+        'How I tested it',
+        'Validation compares candidates with the scene narrative; the README illustrates the mismatch of an aggressive track with a sleeping-baby photo. I added a critic stage and candidate-ID matching. The repo does not publish a measured quality benchmark or automated test results.',
+      ],
+      [
+        'UX decision',
+        'A dark-mode studio exposes the 4-stage Agentic Reasoning Trace ([VISION] → [STRATEGY] → [SCOUT] → [CRITIC]) alongside audio-feature bars and conversational refinement so “make it more upbeat” reuses photo context without re-uploading.',
+      ],
     ],
-    link: 'https://github.com/rsm-wew068/muse-ai', image: null, color: 'purple', cta: 'Explore the project',
-    visualLabel: 'Photo-driven music discovery', visualText: 'From a moment to a soundtrack.',
+    link: 'https://muse-frontend-2vu4yee5ha-uc.a.run.app/',
+    repo: 'https://github.com/rsm-wew068/muse-ai',
+    image: null,
+    color: 'mauve',
+    cta: 'Explore the live project',
   },
   {
-    title: 'Email Intelligence', label: 'GRAPHRAG · WORKFLOWS',
-    problem: 'People managing long email threads struggle to identify obligations, dependencies, and the tasks that need their attention.',
-    stack: ['Python', 'LangGraph', 'Neo4j', 'FAISS', 'Streamlit'],
-    details: [
-      ["Key decision", "I combine FAISS semantic retrieval with Neo4j relationship expansion, while PostgreSQL stores task records. This supports questions about people and dependencies that isolated text matches can miss, with the added complexity of dual storage."],
-      ["How I tested it", "I built RAGAS answer assessment and LangSmith tracing into the workflow. Invalid extraction JSON pauses for human correction; the calendar also handles validated JSON wrappers and falls back to received dates when deadlines are missing. No benchmark scores are published."],
-      ["UX decision", "Users need to check an obligation before treating it as a task. I show the source email beside editable extraction data before storage, and open the calendar at the earliest task deadline so historical emails do not appear in an empty current-month view."],
+    title: 'NexusAI Email Intelligence',
+    emoji: '🕸️',
+    badge: '59-Node Graph · 5-Tool Agent',
+    label: 'EMAIL INTELLIGENCE · ORG GRAPH & AGENT',
+    problem:
+      'Unstructured corporate email threads bury cross-team deliverables, organizational bottlenecks, and schedule overlaps while exposing inbox tools to prompt injection and hallucinated tasks.',
+    stack: [
+      'Python / FastAPI',
+      'Gemini 3.8 Flash',
+      'NetworkX',
+      'Pydantic v2',
+      'HTML5 Canvas',
+      'Docker / Cloud Run',
     ],
-    link: 'https://huggingface.co/spaces/rsm-wew068/automated-task-manager', image: '/projects/email-intelligence.jpg', color: 'purple', cta: 'Explore the live project',
+    details: [
+      [
+        'Key decision',
+        'I isolate untrusted email bodies inside <UNTRUSTED_EMAIL_CONTENT> boundaries against prompt injection, enforce deterministic verbatim quote grounding so every extracted deliverable cites exact source text, and pair Gemini structured schemas with a local hybrid NLP fallback and a NetworkX temporal MultiDiGraph.',
+      ],
+      [
+        'How I tested it',
+        '6 automated pytest and FastAPI TestClient integration suites verify extraction completeness, NetworkX PageRank/betweenness/temporal cutoffs, iCal (.ics) and CSV exports, 5-tool ReAct agent traces, and verbatim quote-grounding checks (confirming exact spans pass and hallucinated quotes fail) across 59 graph nodes, 128 edges, and 4 schedule conflicts.',
+      ],
+      [
+        'UX decision',
+        'Four studio views separate cognitive load: an Email Extraction Studio with ✓ Grounded Quote badges, a HiDPI force-directed Org & Temporal Graph with a date-cutoff slider, a Productivity Hub (Table, Kanban, Gantt + overlap alerts), and a 5-tool AI Agent with one-click playbooks.',
+      ],
+    ],
+    link: 'https://email-intelligence-system-249816165253.us-central1.run.app/',
+    repo: 'https://github.com/rsm-wew068/email-intelligence-system',
+    image: '/projects/nexusai-email.png',
+    color: 'slate',
+    cta: 'Explore the live project',
   },
-
+  {
+    title: 'AI Recruitment Hub',
+    emoji: '🤝',
+    badge: '6-Stage Hiring Pipeline',
+    label: 'HR WORKFLOW AI · END-TO-END AUTOMATION',
+    problem:
+      'Recruiters juggle fragmented tools to draft job descriptions, parse PDF resumes, score candidate fit, coordinate interview links, and prepare formatted offer letters and contracts.',
+    stack: [
+      'Python / Shiny',
+      'Llama-3 & Gemini 2.0',
+      'PyMuPDF & FPDF',
+      'DuckDB / Scikit-learn',
+      'Calendly API',
+      'Docker / Hugging Face',
+    ],
+    details: [
+      [
+        'Key decision',
+        'A unified llm_connect dispatcher routes between self-hosted Llama-3 and Gemini 2.0 Flash with endpoint health checks, while a shared MCP JSON context store (with /tmp container mirroring) connects jobs, parsed resumes, interview schedules, and contract generation across 7 decoupled modules.',
+      ],
+      [
+        'How I tested it',
+        'Automated connection probes validate status codes, auth, and 20s timeouts; pydantic-evals and Scikit-learn/Statsmodels support factual checks and qualification correlation analysis; FPDF Latin-1 glyph sanitization prevents Unicode resume crashes during PDF contract generation.',
+      ],
+      [
+        'UX decision',
+        'A progressive 6-stage workspace guides recruiters from Job Creation and drag-and-drop Resume Fit Profiling to Calendly-injected Interview Invites, Plotly/Altair correlation charts, and editable in-browser Offer Letter previews with one-click PDF export.',
+      ],
+    ],
+    link: 'https://huggingface.co/spaces/rsm-wew068/recruitment-ai-system',
+    repo: 'https://github.com/rsm-wew068/ai-recruitment-hub',
+    image: null,
+    color: 'maple',
+    cta: 'Explore the live project',
+  },
 ];
+
 export default function Home() {
-  return <>
-    <a className="skip-link" href="#main">Skip to content</a>
-    <header className="header"><a className="brand" href="#">Rachel<span>Wang</span><i><Icon name="star"/></i></a><nav aria-label="Main navigation"><a href="#story">My story</a><a href="mailto:ygweihsien910622@gmail.com" className="nav-contact">Let’s talk <span><Icon name="arrow"/></span></a></nav></header>
-    <main id="main">
-      <section className="hero">
-        <div className="hero-copy"><p className="eyebrow"><span className="small-star"><Icon name="star"/></span> A little curiosity goes a long way</p><h1>People first.<br/>Then <em>possibility.</em></h1><p className="hero-subtitle">Builds and tests agentic AI products, from experiment design to shipping</p><p className="hero-intro">Hi, I'm Rachel, a product-minded builder. I turn user needs into AI systems and use data to decide what to build next.</p><div className="hero-actions"><a href="#work" className="primary-link">See my work <span aria-hidden="true"><Icon name="down"/></span></a><a href="#story" className="hero-story-link">Here's how I got here <span aria-hidden="true"><Icon name="arrow"/></span></a></div><div className="hero-caption"><span>MS Business Analytics, UC San Diego</span></div></div>
-        <div className="portrait-composition"><div className="portrait-frame"><Image src="/rachel-coast.jpg" alt="Rachel Wang" fill priority sizes="(max-width: 760px) 80vw, 420px" className="portrait"/><div className="portrait-label">Rachel Wang</div></div><span className="orbit-label label-design">an eye for design <i>◐</i></span><span className="orbit-label label-people"><i>♡</i> a mind for people</span><span className="orbit-label label-data">a habit of asking why <i><Icon name="arrow"/></i></span><span className="portrait-star" aria-hidden="true"><Icon name="star"/></span><svg className="scribble" viewBox="0 0 160 90" aria-hidden="true"><path d="M5 65 Q70 5 100 40 T145 30 M130 28 L148 28 L144 46"/></svg></div>
-      </section>
-      <section id="work" className="section work-section"><div className="work-heading"><div><p className="eyebrow">01 / Ideas made real</p><h2>Curiosity, <em>in practice.</em></h2></div><a href="https://github.com/rsm-wew068" target="_blank" rel="noreferrer">More on GitHub <Icon name="arrow"/></a></div><SelectedWork projects={projects}/></section>
-      <section id="story" className="section story-section"><div className="section-heading"><p className="eyebrow">02 / The path that shaped me</p><h2>A winding path.<br/><em>A clear purpose.</em></h2><p>I’ve always been curious about what makes people care, and what makes a product worth coming back to. Each chapter gave me a different way to answer that question.</p></div><Journey/></section>
-      <section className="approach section"><div><p className="eyebrow">03 / How I build</p><h2>The journey comes<br/>before the <em>pipeline.</em></h2><p className="approach-intro">I start with what someone wants to accomplish, where they get stuck, and what would make the next step feel effortless.</p><p>I design the workflow and architecture, then build it with AI tools. Every feature has to earn its place in the user’s experience.</p></div><ol className="workflow"><li><span>01</span><div><h3>Understand the person</h3><p>Find the real need behind the request.</p></div><i>◎</i></li><li><span>02</span><div><h3>Map the whole journey</h3><p>Outline the experience, from first click to outcome.</p></div><i><Icon name="flow"/></i></li><li><span>03</span><div><h3>Build with AI tools</h3><p>Implement the architecture I designed around the workflow.</p></div><i><Icon name="star"/></i></li><li><span>04</span><div><h3>Test. Learn. Make it better.</h3><p>Check whether it delivers for the people using it.</p></div><i><Icon name="arrow"/></i></li></ol></section>
-      <section className="contact section"><p className="eyebrow">Something worth building?</p><h2>Let’s <em>connect!</em></h2><div className="contact-info"><p>Email: <a href="mailto:ygweihsien910622@gmail.com">ygweihsien910622@gmail.com</a></p><p>LinkedIn: <a href="https://linkedin.com/in/wei-hsien-wang-b21922230" target="_blank" rel="noreferrer">wei-hsien-wang-b21922230</a></p><p>GitHub: <a href="https://github.com/rsm-wew068" target="_blank" rel="noreferrer">@rsm-wew068</a></p></div><div className="contact-photo"><Image src="/golden-gate.jpg" alt="Golden Gate Bridge over San Francisco Bay" fill sizes="(max-width: 760px) 80vw, 330px"/></div></section>
-    </main><footer><a className="brand" href="#">Rachel<span>Wang</span><i><Icon name="star"/></i></a><p>Made with curiosity. Built around people.</p><a href="https://github.com/rsm-wew068" target="_blank" rel="noreferrer">GitHub <Icon name="arrow"/></a></footer>
-  </>;
+  return <PortfolioStudio projects={projects} />;
 }
